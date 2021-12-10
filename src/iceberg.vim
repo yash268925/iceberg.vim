@@ -526,6 +526,29 @@ function! s:create_colors(palette) abort
         \   'guifg': g.normal_fg,
         \ }))
 
+  " [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+  call extend(rules, pgmnt#hi#group(
+        \ 'TSInclude', {
+        \   'ctermfg': c.blue,
+        \   'guifg': g.blue,
+        \   'cterm': 'italic',
+        \   'gui': 'italic',
+        \ }))
+  call extend(rules, pgmnt#hi#group(
+        \ ['TSKeyword', 'TSKeywordFunction', 'TSKeywordOperator', 'TSKeywordReturn'], {
+        \   'ctermfg': c.blue,
+        \   'guifg': g.blue,
+        \   'cterm': 'italic',
+        \   'gui': 'italic',
+        \ }))
+  call extend(rules, pgmnt#hi#group(
+        \ ['TSConditional', 'TSRepeat'], {
+        \   'ctermfg': c.blue,
+        \   'guifg': g.blue,
+        \   'cterm': 'italic',
+        \   'gui': 'italic',
+        \ }))
+
   " [Sneak](https://github.com/justinmk/vim-sneak/)
   call extend(rules, pgmnt#hi#group(
         \ 'Sneak', {
@@ -732,6 +755,62 @@ function! s:create_links() abort
 
   " [nginx.vim](https://github.com/chr4/nginx.vim)
   call add(links, pgmnt#hi#link('ngxDirective', 'Statement'))
+
+  " [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+  call add(links, pgmnt#hi#link('TSAttribute', 'Constant'))
+  call add(links, pgmnt#hi#link('TSBoolean', 'Constant'))
+  call add(links, pgmnt#hi#link('TSCharacter', 'String'))
+  call add(links, pgmnt#hi#link('TSComment', 'Comment'))
+  call add(links, pgmnt#hi#link('TSConstant', 'Constant'))
+  call add(links, pgmnt#hi#link('TSConstBuiltin', 'Constant'))
+  call add(links, pgmnt#hi#link('TSConstMacro', 'Constant'))
+  call add(links, pgmnt#hi#link('TSConstructor', 'Statement'))
+  call add(links, pgmnt#hi#link('TSError', 'Error'))
+  call add(links, pgmnt#hi#link('TSException', 'Statement'))
+  call add(links, pgmnt#hi#link('TSField', 'Identifier'))
+  call add(links, pgmnt#hi#link('TSFloat', 'Normal'))
+  call add(links, pgmnt#hi#link('TSFunction', 'Normal'))
+  call add(links, pgmnt#hi#link('TSFuncBuiltin', 'Function'))
+  call add(links, pgmnt#hi#link('TSFuncMacro', 'Function'))
+  call add(links, pgmnt#hi#link('TSLabel', 'Identifier'))
+  call add(links, pgmnt#hi#link('TSMethod', 'Identifier'))
+  call add(links, pgmnt#hi#link('TSNamespace', 'Identifier'))
+  call add(links, pgmnt#hi#link('TSNone', 'Normal'))
+  call add(links, pgmnt#hi#link('TSNumber', 'Normal'))
+  call add(links, pgmnt#hi#link('TSOperator', 'Operator'))
+  call add(links, pgmnt#hi#link('TSParameter', 'Normal'))
+  call add(links, pgmnt#hi#link('TSParameterReference', 'Special'))
+  call add(links, pgmnt#hi#link('TSProperty', 'Special'))
+  call add(links, pgmnt#hi#link('TSPunctDelimiter', 'Normal'))
+  call add(links, pgmnt#hi#link('TSPunctBracket', 'Normal'))
+  call add(links, pgmnt#hi#link('TSPunctSpecial', 'Normal'))
+  call add(links, pgmnt#hi#link('TSString', 'String'))
+  call add(links, pgmnt#hi#link('TSStringRegex', 'String'))
+  call add(links, pgmnt#hi#link('TSStringEscape', 'String'))
+  call add(links, pgmnt#hi#link('TSStringSpecial', 'String'))
+  call add(links, pgmnt#hi#link('TSSymbol','Identifier'))
+  call add(links, pgmnt#hi#link('TSTag', 'Statement'))
+  call add(links, pgmnt#hi#link('TSTagAttribute', 'Constant'))
+  call add(links, pgmnt#hi#link('TSTagDelimiter', 'Statement'))
+  call add(links, pgmnt#hi#link('TSText', 'Normal'))
+  call add(links, pgmnt#hi#link('TSStrong', 'Special'))
+  call add(links, pgmnt#hi#link('TSEmphasis', 'Special'))
+  call add(links, pgmnt#hi#link('TSUnderline', 'Underlined'))
+  call add(links, pgmnt#hi#link('TSStrike', 'Normal'))
+  call add(links, pgmnt#hi#link('TSTitle', 'Title'))
+  call add(links, pgmnt#hi#link('TSLiteral', 'String'))
+  call add(links, pgmnt#hi#link('TSURI', 'String'))
+  call add(links, pgmnt#hi#link('TSMath', 'String'))
+  call add(links, pgmnt#hi#link('TSTextReference', 'Comment'))
+  call add(links, pgmnt#hi#link('TSEnvironment', 'Comment'))
+  call add(links, pgmnt#hi#link('TSEnvironmentName', 'Comment'))
+  call add(links, pgmnt#hi#link('TSNote', 'Todo'))
+  call add(links, pgmnt#hi#link('TSWarning', 'Todo'))
+  call add(links, pgmnt#hi#link('TSDanger', 'Todo'))
+  call add(links, pgmnt#hi#link('TSType', 'Type'))
+  call add(links, pgmnt#hi#link('TSTypeBuiltin', 'Type'))
+  call add(links, pgmnt#hi#link('TSVariable', 'Normal'))
+  call add(links, pgmnt#hi#link('TSVariableBuiltin', 'Special'))
 
   " [vim-plug](https://github.com/junegunn/vim-plug)
   call add(links, pgmnt#hi#link('plug1', 'Normal'))

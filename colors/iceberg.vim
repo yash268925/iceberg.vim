@@ -5,7 +5,7 @@
 "
 " File:       iceberg.vim
 " Maintainer: cocopon <cocopon@me.com>
-" Modified:   2020-12-25 11:57+0900
+" Modified:   2021-12-10 19:13+0900
 " License:    MIT
 
 
@@ -106,6 +106,13 @@ if &background == 'light'
   hi GitGutterDelete ctermbg=253 ctermfg=125 guibg=#dcdfe7 guifg=#cc517a
   hi gitmessengerEndOfBuffer ctermbg=253 ctermfg=248 guibg=#dcdfe7 guifg=#9fa7bd
   hi gitmessengerPopupNormal ctermbg=253 ctermfg=237 guibg=#dcdfe7 guifg=#33374c
+  hi TSInclude cterm=italic ctermfg=25 gui=italic guifg=#2d539e
+  hi TSKeyword cterm=italic ctermfg=25 gui=italic guifg=#2d539e
+  hi TSKeywordFunction cterm=italic ctermfg=25 gui=italic guifg=#2d539e
+  hi TSKeywordOperator cterm=italic ctermfg=25 gui=italic guifg=#2d539e
+  hi TSKeywordReturn cterm=italic ctermfg=25 gui=italic guifg=#2d539e
+  hi TSConditional cterm=italic ctermfg=25 gui=italic guifg=#2d539e
+  hi TSRepeat cterm=italic ctermfg=25 gui=italic guifg=#2d539e
   hi Sneak ctermbg=97 ctermfg=254 guibg=#7759b4 guifg=#e8e9ec
   hi SneakScope ctermbg=251 ctermfg=244 guibg=#c9cdd7 guifg=#8389a3
   hi SyntasticErrorSign ctermbg=253 ctermfg=125 guibg=#dcdfe7 guifg=#cc517a
@@ -221,6 +228,13 @@ else
   hi GitGutterDelete ctermbg=235 ctermfg=203 guibg=#1e2132 guifg=#e27878
   hi gitmessengerEndOfBuffer ctermbg=235 ctermfg=239 guibg=#1e2132 guifg=#444b71
   hi gitmessengerPopupNormal ctermbg=235 ctermfg=252 guibg=#1e2132 guifg=#c6c8d1
+  hi TSInclude cterm=italic ctermfg=110 gui=italic guifg=#84a0c6
+  hi TSKeyword cterm=italic ctermfg=110 gui=italic guifg=#84a0c6
+  hi TSKeywordFunction cterm=italic ctermfg=110 gui=italic guifg=#84a0c6
+  hi TSKeywordOperator cterm=italic ctermfg=110 gui=italic guifg=#84a0c6
+  hi TSKeywordReturn cterm=italic ctermfg=110 gui=italic guifg=#84a0c6
+  hi TSConditional cterm=italic ctermfg=110 gui=italic guifg=#84a0c6
+  hi TSRepeat cterm=italic ctermfg=110 gui=italic guifg=#84a0c6
   hi Sneak ctermbg=140 ctermfg=234 guibg=#a093c7 guifg=#161821
   hi SneakScope ctermbg=236 ctermfg=242 guibg=#272c42 guifg=#6b7089
   hi SyntasticErrorSign ctermbg=235 ctermfg=203 guibg=#1e2132 guifg=#e27878
@@ -341,6 +355,60 @@ hi! link markdownCodeDelimiter String
 hi! link markdownHeadingDelimiter Comment
 hi! link markdownRule Comment
 hi! link ngxDirective Statement
+hi! link TSAttribute Constant
+hi! link TSBoolean Constant
+hi! link TSCharacter String
+hi! link TSComment Comment
+hi! link TSConstant Constant
+hi! link TSConstBuiltin Constant
+hi! link TSConstMacro Constant
+hi! link TSConstructor Statement
+hi! link TSError Error
+hi! link TSException Statement
+hi! link TSField Identifier
+hi! link TSFloat Normal
+hi! link TSFunction Normal
+hi! link TSFuncBuiltin Function
+hi! link TSFuncMacro Function
+hi! link TSLabel Identifier
+hi! link TSMethod Identifier
+hi! link TSNamespace Identifier
+hi! link TSNone Normal
+hi! link TSNumber Normal
+hi! link TSOperator Operator
+hi! link TSParameter Normal
+hi! link TSParameterReference Special
+hi! link TSProperty Special
+hi! link TSPunctDelimiter Normal
+hi! link TSPunctBracket Normal
+hi! link TSPunctSpecial Normal
+hi! link TSString String
+hi! link TSStringRegex String
+hi! link TSStringEscape String
+hi! link TSStringSpecial String
+hi! link TSSymbol Identifier
+hi! link TSTag Statement
+hi! link TSTagAttribute Constant
+hi! link TSTagDelimiter Statement
+hi! link TSText Normal
+hi! link TSStrong Special
+hi! link TSEmphasis Special
+hi! link TSUnderline Underlined
+hi! link TSStrike Normal
+hi! link TSTitle Title
+hi! link TSLiteral String
+hi! link TSURI String
+hi! link TSMath String
+hi! link TSTextReference Comment
+hi! link TSEnvironment Comment
+hi! link TSEnvironmentName Comment
+hi! link TSNote Todo
+hi! link TSWarning Todo
+hi! link TSDanger Todo
+hi! link TSType Type
+hi! link TSTypeBuiltin Type
+hi! link TSVariable Normal
+hi! link TSVariableBuiltin Special
 hi! link plug1 Normal
 hi! link plug2 Identifier
 hi! link plugDash Comment
