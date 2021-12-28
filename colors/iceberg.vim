@@ -5,7 +5,7 @@
 "
 " File:       iceberg.vim
 " Maintainer: cocopon <cocopon@me.com>
-" Modified:   2021-12-28 12:12+0900
+" Modified:   2021-12-28 12:28+0900
 " License:    MIT
 
 
@@ -410,7 +410,6 @@ hi! link TSBoolean Constant
 hi! link TSCharacter String
 hi! link TSComment Comment
 hi! link TSConstructor Statement
-hi! link TSConditional Statement
 hi! link TSConstant Constant
 hi! link TSConstBuiltin Constant
 hi! link TSConstMacro Constant
