@@ -568,15 +568,27 @@ function! s:create_colors(palette) abort
 
   " [Tree-sitter](https://github.com/nvim-treesitter/nvim-treesitter)
   call extend(rules, pgmnt#hi#group(
-        \ ['TSFunction', 'TSFunctionBuiltin', 'TSFunctionMacro'], {
-        \   'ctermfg': c.pale,
-        \   'guifg': g.pale,
+        \ 'TSInclude', {
+        \   'ctermfg': c.blue,
+        \   'guifg': g.blue,
+        \   'cterm': 'italic',
+        \   'gui': 'italic',
         \ }))
   call extend(rules, pgmnt#hi#group(
-        \ ['TSMethod'], {
-        \   'ctermfg': c.pale,
-        \   'guifg': g.pale,
+        \ ['TSKeyword', 'TSKeywordFunction', 'TSKeywordOperator', 'TSKeywordReturn'], {
+        \   'ctermfg': c.blue,
+        \   'guifg': g.blue,
+        \   'cterm': 'italic',
+        \   'gui': 'italic',
         \ }))
+  call extend(rules, pgmnt#hi#group(
+        \ ['TSConditional', 'TSRepeat'], {
+        \   'ctermfg': c.blue,
+        \   'guifg': g.blue,
+        \   'cterm': 'italic',
+        \   'gui': 'italic',
+        \ }))
+
   call extend(rules, pgmnt#hi#group(
         \ ['TSURI'], {
         \   'cterm': 'underline',
@@ -831,44 +843,60 @@ function! s:create_links() abort
   call add(links, pgmnt#hi#link('swiftIdentifier', 'icebergNormalFg'))
 
   " [Tree-sitter](https://github.com/nvim-treesitter/nvim-treesitter)
-  call add(links, pgmnt#hi#link('TSAttribute', 'Special'))
+  call add(links, pgmnt#hi#link('TSAttribute', 'Constant'))
   call add(links, pgmnt#hi#link('TSBoolean', 'Constant'))
-  call add(links, pgmnt#hi#link('TSCharacter', 'Constant'))
+  call add(links, pgmnt#hi#link('TSCharacter', 'String'))
   call add(links, pgmnt#hi#link('TSComment', 'Comment'))
-  call add(links, pgmnt#hi#link('TSConstructor', 'icebergNormalFg'))
+  call add(links, pgmnt#hi#link('TSConstructor', 'Statement'))
   call add(links, pgmnt#hi#link('TSConditional', 'Statement'))
   call add(links, pgmnt#hi#link('TSConstant', 'Constant'))
   call add(links, pgmnt#hi#link('TSConstBuiltin', 'Constant'))
   call add(links, pgmnt#hi#link('TSConstMacro', 'Constant'))
   call add(links, pgmnt#hi#link('TSError', 'Error'))
   call add(links, pgmnt#hi#link('TSException', 'Statement'))
-  call add(links, pgmnt#hi#link('TSField', 'icebergNormalFg'))
-  call add(links, pgmnt#hi#link('TSFloat', 'Constant'))
-  call add(links, pgmnt#hi#link('TSInclude', 'Statement'))
-  call add(links, pgmnt#hi#link('TSKeyword', 'Statement'))
-  call add(links, pgmnt#hi#link('TSKeywordFunction', 'Function'))
-  call add(links, pgmnt#hi#link('TSLabel', 'Special'))
-  call add(links, pgmnt#hi#link('TSNamespace', 'Statement'))
-  call add(links, pgmnt#hi#link('TSNumber', 'Constant'))
-  call add(links, pgmnt#hi#link('TSOperator', 'icebergNormalFg'))
+  call add(links, pgmnt#hi#link('TSField', 'Identifier'))
+  call add(links, pgmnt#hi#link('TSFloat', 'icebergNormalFg'))
+  call add(links, pgmnt#hi#link('TSFunction', 'icebergNormalFg'))
+  call add(links, pgmnt#hi#link('TSFuncBuiltin', 'Function'))
+  call add(links, pgmnt#hi#link('TSFuncMacro', 'Function'))
+  call add(links, pgmnt#hi#link('TSLabel', 'Identifier'))
+  call add(links, pgmnt#hi#link('TSMethod', 'Identifier'))
+  call add(links, pgmnt#hi#link('TSNamespace', 'Identifier'))
+  call add(links, pgmnt#hi#link('TSNone', 'icebergNormalFg'))
+  call add(links, pgmnt#hi#link('TSNumber', 'icebergNormalFg'))
+  call add(links, pgmnt#hi#link('TSOperator', 'Operator'))
   call add(links, pgmnt#hi#link('TSParameter', 'icebergNormalFg'))
-  call add(links, pgmnt#hi#link('TSParameterReference', 'icebergNormalFg'))
-  call add(links, pgmnt#hi#link('TSProperty', 'TSField'))
+  call add(links, pgmnt#hi#link('TSParameterReference', 'Special'))
+  call add(links, pgmnt#hi#link('TSProperty', 'Special'))
   call add(links, pgmnt#hi#link('TSPunctDelimiter', 'icebergNormalFg'))
   call add(links, pgmnt#hi#link('TSPunctBracket', 'icebergNormalFg'))
-  call add(links, pgmnt#hi#link('TSPunctSpecial', 'Special'))
-  call add(links, pgmnt#hi#link('TSRepeat', 'Statement'))
+  call add(links, pgmnt#hi#link('TSPunctSpecial', 'icebergNormalFg'))
   call add(links, pgmnt#hi#link('TSString', 'String'))
   call add(links, pgmnt#hi#link('TSStringRegex', 'String'))
-  call add(links, pgmnt#hi#link('TSStringEscape', 'Special'))
-  call add(links, pgmnt#hi#link('TSTag', 'htmlTagName'))
-  call add(links, pgmnt#hi#link('TSTagDelimiter', 'htmlTagName'))
+  call add(links, pgmnt#hi#link('TSStringEscape', 'String'))
+  call add(links, pgmnt#hi#link('TSStringSpecial', 'String'))
+  call add(links, pgmnt#hi#link('TSSymbol','Identifier'))
+  call add(links, pgmnt#hi#link('TSTag', 'Statement'))
+  call add(links, pgmnt#hi#link('TSTagAttribute', 'Constant'))
+  call add(links, pgmnt#hi#link('TSTagDelimiter', 'Statement'))
   call add(links, pgmnt#hi#link('TSText', 'icebergNormalFg'))
+  call add(links, pgmnt#hi#link('TSStrong', 'Special'))
+  call add(links, pgmnt#hi#link('TSEmphasis', 'Special'))
+  call add(links, pgmnt#hi#link('TSUnderline', 'Underlined'))
+  call add(links, pgmnt#hi#link('TSStrike', 'icebergNormalFg'))
   call add(links, pgmnt#hi#link('TSTitle', 'Title'))
+  call add(links, pgmnt#hi#link('TSLiteral', 'String'))
+  call add(links, pgmnt#hi#link('TSMath', 'String'))
+  call add(links, pgmnt#hi#link('TSTextReference', 'Comment'))
+  call add(links, pgmnt#hi#link('TSEnvironment', 'Comment'))
+  call add(links, pgmnt#hi#link('TSEnvironmentName', 'Comment'))
+  call add(links, pgmnt#hi#link('TSNote', 'Todo'))
+  call add(links, pgmnt#hi#link('TSWarning', 'Todo'))
+  call add(links, pgmnt#hi#link('TSDanger', 'Todo'))
   call add(links, pgmnt#hi#link('TSType', 'Type'))
   call add(links, pgmnt#hi#link('TSTypeBuiltin', 'Type'))
   call add(links, pgmnt#hi#link('TSVariable', 'icebergNormalFg'))
-  call add(links, pgmnt#hi#link('TSVariableBuiltin', 'Statement'))
+  call add(links, pgmnt#hi#link('TSVariableBuiltin', 'Special'))
 
   " [typescript-vim](https://github.com/leafgarland/typescript-vim)
   call add(links, pgmnt#hi#link('typescriptAjaxMethods', 'icebergNormalFg'))
