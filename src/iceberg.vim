@@ -590,16 +590,6 @@ function! s:create_colors(palette) abort
         \ }))
 
   call extend(rules, pgmnt#hi#group(
-        \ ['TSFunction', 'TSFunctionBuiltin', 'TSFunctionMacro'], {
-        \   'ctermfg': c.pale,
-        \   'guifg': g.pale,
-        \ }))
-  call extend(rules, pgmnt#hi#group(
-        \ ['TSMethod'], {
-        \   'ctermfg': c.pale,
-        \   'guifg': g.pale,
-        \ }))
-  call extend(rules, pgmnt#hi#group(
         \ ['TSURI'], {
         \   'cterm': 'underline',
         \   'ctermfg': c.lblue,
@@ -858,6 +848,7 @@ function! s:create_links() abort
   call add(links, pgmnt#hi#link('TSCharacter', 'String'))
   call add(links, pgmnt#hi#link('TSComment', 'Comment'))
   call add(links, pgmnt#hi#link('TSConstructor', 'Statement'))
+  call add(links, pgmnt#hi#link('TSConditional', 'Statement'))
   call add(links, pgmnt#hi#link('TSConstant', 'Constant'))
   call add(links, pgmnt#hi#link('TSConstBuiltin', 'Constant'))
   call add(links, pgmnt#hi#link('TSConstMacro', 'Constant'))
@@ -869,7 +860,7 @@ function! s:create_links() abort
   call add(links, pgmnt#hi#link('TSFuncBuiltin', 'Function'))
   call add(links, pgmnt#hi#link('TSFuncMacro', 'Function'))
   call add(links, pgmnt#hi#link('TSLabel', 'Identifier'))
-  " call add(links, pgmnt#hi#link('TSMethod', 'Identifier'))
+  call add(links, pgmnt#hi#link('TSMethod', 'Identifier'))
   call add(links, pgmnt#hi#link('TSNamespace', 'Identifier'))
   call add(links, pgmnt#hi#link('TSNone', 'icebergNormalFg'))
   call add(links, pgmnt#hi#link('TSNumber', 'icebergNormalFg'))
@@ -895,7 +886,6 @@ function! s:create_links() abort
   call add(links, pgmnt#hi#link('TSStrike', 'icebergNormalFg'))
   call add(links, pgmnt#hi#link('TSTitle', 'Title'))
   call add(links, pgmnt#hi#link('TSLiteral', 'String'))
-  " call add(links, pgmnt#hi#link('TSURI', 'String'))
   call add(links, pgmnt#hi#link('TSMath', 'String'))
   call add(links, pgmnt#hi#link('TSTextReference', 'Comment'))
   call add(links, pgmnt#hi#link('TSEnvironment', 'Comment'))

@@ -5,7 +5,7 @@
 "
 " File:       iceberg.vim
 " Maintainer: cocopon <cocopon@me.com>
-" Modified:   2021-12-28 11:30+0900
+" Modified:   2021-12-28 12:12+0900
 " License:    MIT
 
 
@@ -120,10 +120,6 @@ if &background == 'light'
   hi TSKeywordReturn cterm=italic ctermfg=25 gui=italic guifg=#2d539e
   hi TSConditional cterm=italic ctermfg=25 gui=italic guifg=#2d539e
   hi TSRepeat cterm=italic ctermfg=25 gui=italic guifg=#2d539e
-  hi TSFunction ctermfg=237 guifg=#505695
-  hi TSFunctionBuiltin ctermfg=237 guifg=#505695
-  hi TSFunctionMacro ctermfg=237 guifg=#505695
-  hi TSMethod ctermfg=237 guifg=#505695
   hi TSURI cterm=underline ctermfg=31 gui=underline guifg=#3f83a6 term=underline
   hi ZenSpace ctermbg=125 guibg=#cc517a
   hi DiagnosticUnderlineInfo cterm=underline ctermfg=31 gui=underline guisp=#3f83a6 term=underline
@@ -261,10 +257,6 @@ else
   hi TSKeywordReturn cterm=italic ctermfg=110 gui=italic guifg=#84a0c6
   hi TSConditional cterm=italic ctermfg=110 gui=italic guifg=#84a0c6
   hi TSRepeat cterm=italic ctermfg=110 gui=italic guifg=#84a0c6
-  hi TSFunction ctermfg=252 guifg=#a3adcb
-  hi TSFunctionBuiltin ctermfg=252 guifg=#a3adcb
-  hi TSFunctionMacro ctermfg=252 guifg=#a3adcb
-  hi TSMethod ctermfg=252 guifg=#a3adcb
   hi TSURI cterm=underline ctermfg=109 gui=underline guifg=#89b8c2 term=underline
   hi ZenSpace ctermbg=203 guibg=#e27878
   hi DiagnosticUnderlineInfo cterm=underline ctermfg=109 gui=underline guisp=#89b8c2 term=underline
@@ -418,6 +410,7 @@ hi! link TSBoolean Constant
 hi! link TSCharacter String
 hi! link TSComment Comment
 hi! link TSConstructor Statement
+hi! link TSConditional Statement
 hi! link TSConstant Constant
 hi! link TSConstBuiltin Constant
 hi! link TSConstMacro Constant
@@ -429,6 +422,7 @@ hi! link TSFunction icebergNormalFg
 hi! link TSFuncBuiltin Function
 hi! link TSFuncMacro Function
 hi! link TSLabel Identifier
+hi! link TSMethod Identifier
 hi! link TSNamespace Identifier
 hi! link TSNone icebergNormalFg
 hi! link TSNumber icebergNormalFg
