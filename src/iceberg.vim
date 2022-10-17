@@ -568,21 +568,21 @@ function! s:create_colors(palette) abort
 
   " [Tree-sitter](https://github.com/nvim-treesitter/nvim-treesitter)
   call extend(rules, pgmnt#hi#group(
-        \ 'TSInclude', {
+        \ '@include', {
         \   'ctermfg': c.blue,
         \   'guifg': g.blue,
         \   'cterm': 'italic',
         \   'gui': 'italic',
         \ }))
   call extend(rules, pgmnt#hi#group(
-        \ ['TSKeyword', 'TSKeywordFunction', 'TSKeywordOperator', 'TSKeywordReturn'], {
+        \ ['@keyword', '@keyword.function', '@keyword.operator', '@keyword.return'], {
         \   'ctermfg': c.blue,
         \   'guifg': g.blue,
         \   'cterm': 'italic',
         \   'gui': 'italic',
         \ }))
   call extend(rules, pgmnt#hi#group(
-        \ ['TSConditional', 'TSRepeat'], {
+        \ ['@conditional', '@repeat', '@exception'], {
         \   'ctermfg': c.blue,
         \   'guifg': g.blue,
         \   'cterm': 'italic',
@@ -590,7 +590,7 @@ function! s:create_colors(palette) abort
         \ }))
 
   call extend(rules, pgmnt#hi#group(
-        \ ['TSURI'], {
+        \ ['@uri'], {
         \   'cterm': 'underline',
         \   'ctermfg': c.lblue,
         \   'gui': 'underline',
@@ -843,71 +843,58 @@ function! s:create_links() abort
   call add(links, pgmnt#hi#link('swiftIdentifier', 'icebergNormalFg'))
 
   " [Tree-sitter](https://github.com/nvim-treesitter/nvim-treesitter)
-  call add(links, pgmnt#hi#link('TSAttribute', 'Constant'))
-  call add(links, pgmnt#hi#link('TSBoolean', 'Constant'))
-  call add(links, pgmnt#hi#link('TSCharacter', 'String'))
-  call add(links, pgmnt#hi#link('TSComment', 'Comment'))
-  call add(links, pgmnt#hi#link('TSConstructor', 'Statement'))
-  call add(links, pgmnt#hi#link('TSConstant', 'Constant'))
-  call add(links, pgmnt#hi#link('TSConstBuiltin', 'Constant'))
-  call add(links, pgmnt#hi#link('TSConstMacro', 'Constant'))
-  call add(links, pgmnt#hi#link('TSError', 'Error'))
-  call add(links, pgmnt#hi#link('TSException', 'Statement'))
-  call add(links, pgmnt#hi#link('TSField', 'Identifier'))
-  call add(links, pgmnt#hi#link('TSFloat', 'icebergNormalFg'))
-  call add(links, pgmnt#hi#link('TSFunction', 'icebergNormalFg'))
-  call add(links, pgmnt#hi#link('TSFuncBuiltin', 'Function'))
-  call add(links, pgmnt#hi#link('TSFuncMacro', 'Function'))
-  call add(links, pgmnt#hi#link('TSLabel', 'Identifier'))
-  call add(links, pgmnt#hi#link('TSMethod', 'Identifier'))
-  call add(links, pgmnt#hi#link('TSNamespace', 'Identifier'))
-  call add(links, pgmnt#hi#link('TSNone', 'icebergNormalFg'))
-  call add(links, pgmnt#hi#link('TSNumber', 'icebergNormalFg'))
-  call add(links, pgmnt#hi#link('TSOperator', 'Operator'))
-  call add(links, pgmnt#hi#link('TSParameter', 'icebergNormalFg'))
-  call add(links, pgmnt#hi#link('TSParameterReference', 'Special'))
-  call add(links, pgmnt#hi#link('TSProperty', 'Special'))
-  call add(links, pgmnt#hi#link('TSPunctDelimiter', 'icebergNormalFg'))
-  call add(links, pgmnt#hi#link('TSPunctBracket', 'icebergNormalFg'))
-  call add(links, pgmnt#hi#link('TSPunctSpecial', 'icebergNormalFg'))
-  call add(links, pgmnt#hi#link('TSString', 'String'))
-  call add(links, pgmnt#hi#link('TSStringRegex', 'String'))
-  call add(links, pgmnt#hi#link('TSStringEscape', 'String'))
-  call add(links, pgmnt#hi#link('TSStringSpecial', 'String'))
-  call add(links, pgmnt#hi#link('TSSymbol','Identifier'))
-  call add(links, pgmnt#hi#link('TSTag', 'Statement'))
-  call add(links, pgmnt#hi#link('TSTagAttribute', 'Constant'))
-  call add(links, pgmnt#hi#link('TSTagDelimiter', 'Statement'))
-  call add(links, pgmnt#hi#link('TSText', 'icebergNormalFg'))
-  call add(links, pgmnt#hi#link('TSStrong', 'Special'))
-  call add(links, pgmnt#hi#link('TSEmphasis', 'Special'))
-  call add(links, pgmnt#hi#link('TSUnderline', 'Underlined'))
-  call add(links, pgmnt#hi#link('TSStrike', 'icebergNormalFg'))
-  call add(links, pgmnt#hi#link('TSTitle', 'Title'))
-  call add(links, pgmnt#hi#link('TSLiteral', 'String'))
-  call add(links, pgmnt#hi#link('TSMath', 'String'))
-  call add(links, pgmnt#hi#link('TSTextReference', 'Comment'))
-  call add(links, pgmnt#hi#link('TSEnvironment', 'Comment'))
-  call add(links, pgmnt#hi#link('TSEnvironmentName', 'Comment'))
-  call add(links, pgmnt#hi#link('TSNote', 'Todo'))
-  call add(links, pgmnt#hi#link('TSWarning', 'Todo'))
-  call add(links, pgmnt#hi#link('TSDanger', 'Todo'))
-  call add(links, pgmnt#hi#link('TSType', 'Type'))
-  call add(links, pgmnt#hi#link('TSTypeBuiltin', 'Type'))
-  call add(links, pgmnt#hi#link('TSVariable', 'icebergNormalFg'))
-  call add(links, pgmnt#hi#link('TSVariableBuiltin', 'Special'))
-
-  " [typescript-vim](https://github.com/leafgarland/typescript-vim)
-  call add(links, pgmnt#hi#link('typescriptAjaxMethods', 'icebergNormalFg'))
-  call add(links, pgmnt#hi#link('typescriptBraces', 'icebergNormalFg'))
-  call add(links, pgmnt#hi#link('typescriptEndColons', 'icebergNormalFg'))
-  call add(links, pgmnt#hi#link('typescriptFuncKeyword', 'Statement'))
-  call add(links, pgmnt#hi#link('typescriptGlobalObjects', 'Statement'))
-  call add(links, pgmnt#hi#link('typescriptHtmlElemProperties', 'icebergNormalFg'))
-  call add(links, pgmnt#hi#link('typescriptIdentifier', 'Statement'))
-  call add(links, pgmnt#hi#link('typescriptMessage', 'icebergNormalFg'))
-  call add(links, pgmnt#hi#link('typescriptNull', 'Constant'))
-  call add(links, pgmnt#hi#link('typescriptParens', 'icebergNormalFg'))
+  call add(links, pgmnt#hi#link('@attribute', 'Constant'))
+  call add(links, pgmnt#hi#link('@boolean', 'Constant'))
+  call add(links, pgmnt#hi#link('@character', 'String'))
+  call add(links, pgmnt#hi#link('@comment', 'Comment'))
+  call add(links, pgmnt#hi#link('@constructor', 'Statement'))
+  call add(links, pgmnt#hi#link('@constant', 'Constant'))
+  call add(links, pgmnt#hi#link('@constant.builtin', 'Constant'))
+  call add(links, pgmnt#hi#link('@constant.macro', 'Constant'))
+  call add(links, pgmnt#hi#link('@error', 'Error'))
+  call add(links, pgmnt#hi#link('@field', 'Identifier'))
+  call add(links, pgmnt#hi#link('@float', 'icebergNormalFg'))
+  call add(links, pgmnt#hi#link('@function', 'icebergNormalFg'))
+  call add(links, pgmnt#hi#link('@function.builtin', 'Function'))
+  call add(links, pgmnt#hi#link('@function.macro', 'Function'))
+  call add(links, pgmnt#hi#link('@label', 'Identifier'))
+  call add(links, pgmnt#hi#link('@method', 'Identifier'))
+  call add(links, pgmnt#hi#link('@namespace', 'Identifier'))
+  call add(links, pgmnt#hi#link('@none', 'icebergNormalFg'))
+  call add(links, pgmnt#hi#link('@number', 'icebergNormalFg'))
+  call add(links, pgmnt#hi#link('@operator', 'Operator'))
+  call add(links, pgmnt#hi#link('@parameter', 'icebergNormalFg'))
+  call add(links, pgmnt#hi#link('@parameter.reference', 'Special'))
+  call add(links, pgmnt#hi#link('@property', 'Special'))
+  call add(links, pgmnt#hi#link('@punctuation.delimiter', 'icebergNormalFg'))
+  call add(links, pgmnt#hi#link('@punctuation.bracket', 'icebergNormalFg'))
+  call add(links, pgmnt#hi#link('@punctuation.special', 'icebergNormalFg'))
+  call add(links, pgmnt#hi#link('@string', 'String'))
+  call add(links, pgmnt#hi#link('@string.regex', 'String'))
+  call add(links, pgmnt#hi#link('@string.escape', 'String'))
+  call add(links, pgmnt#hi#link('@string.special', 'String'))
+  call add(links, pgmnt#hi#link('@symbol','Identifier'))
+  call add(links, pgmnt#hi#link('@tag', 'Statement'))
+  call add(links, pgmnt#hi#link('@tag.attribute', 'Constant'))
+  call add(links, pgmnt#hi#link('@tag.delimiter', 'Statement'))
+  call add(links, pgmnt#hi#link('@text', 'icebergNormalFg'))
+  call add(links, pgmnt#hi#link('@strong', 'Special'))
+  call add(links, pgmnt#hi#link('@emphasis', 'Special'))
+  call add(links, pgmnt#hi#link('@underline', 'Underlined'))
+  call add(links, pgmnt#hi#link('@strike', 'icebergNormalFg'))
+  call add(links, pgmnt#hi#link('@title', 'Title'))
+  call add(links, pgmnt#hi#link('@literal', 'String'))
+  call add(links, pgmnt#hi#link('@math', 'String'))
+  call add(links, pgmnt#hi#link('@text.reference', 'Comment'))
+  call add(links, pgmnt#hi#link('@environment', 'Comment'))
+  call add(links, pgmnt#hi#link('@environment.name', 'Comment'))
+  call add(links, pgmnt#hi#link('@note', 'Todo'))
+  call add(links, pgmnt#hi#link('@warning', 'Todo'))
+  call add(links, pgmnt#hi#link('@danger', 'Todo'))
+  call add(links, pgmnt#hi#link('@type', 'Type'))
+  call add(links, pgmnt#hi#link('@type.builtin', 'Type'))
+  call add(links, pgmnt#hi#link('@variable', 'icebergNormalFg'))
+  call add(links, pgmnt#hi#link('@variable.builtin', 'Special'))
   " }}}
 
   return links
