@@ -5,7 +5,7 @@
 "
 " File:       iceberg.vim
 " Maintainer: cocopon <cocopon@me.com>
-" Modified:   2022-10-17 19:14+0900
+" Modified:   2022-10-19 10:49+0900
 " License:    MIT
 
 
@@ -430,9 +430,9 @@ hi! link @operator Operator
 hi! link @parameter icebergNormalFg
 hi! link @parameter.reference Special
 hi! link @property Special
-hi! link @punctuation.delimiter icebergNormalFg
-hi! link @punctuation.bracket icebergNormalFg
-hi! link @punctuation.special icebergNormalFg
+hi! link @punctuation.delimiter Delimiter
+hi! link @punctuation.bracket Delimiter
+hi! link @punctuation.special Delimiter
 hi! link @string String
 hi! link @string.regex String
 hi! link @string.escape String
@@ -447,6 +447,7 @@ hi! link @emphasis Special
 hi! link @underline Underlined
 hi! link @strike icebergNormalFg
 hi! link @title Title
+hi! link @text.title Title
 hi! link @literal String
 hi! link @math String
 hi! link @text.reference Comment
