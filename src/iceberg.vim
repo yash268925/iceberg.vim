@@ -645,6 +645,14 @@ function! s:create_colors(palette) abort
         \ }))
   " }}}
 
+  " [Neovim build-in floating window] {{{
+  call extend(rules, pgmnt#hi#group(
+        \ ['NormalFloat', 'FloatBorder'], {
+        \   'guibg': g.pmenu_bg,
+        \   'guifg': g.pmenu_fg,
+        \ }))
+  " }}}
+
   " Palettes for statusline plugins {{{
   call extend(rules, pgmnt#hi#group(
         \ 'icebergALAccentRed', {

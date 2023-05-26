@@ -5,7 +5,7 @@
 "
 " File:       iceberg.vim
 " Maintainer: cocopon <cocopon@me.com>
-" Modified:   2022-10-19 10:49+0900
+" Modified:   2023-05-26 15:34+0900
 " License:    MIT
 
 
@@ -136,6 +136,8 @@ if &background == 'light'
   hi DiagnosticError ctermfg=125 guifg=#cc517a
   hi DiagnosticSignError ctermbg=253 ctermfg=125 guibg=#dcdfe7 guifg=#cc517a
   hi DiagnosticFloatingHint ctermbg=251 ctermfg=237 guibg=#cad0de guifg=#33374c
+  hi NormalFloat guibg=#cad0de guifg=#33374c
+  hi FloatBorder guibg=#cad0de guifg=#33374c
   hi icebergALAccentRed ctermfg=125 guifg=#cc517a
 
   if has('nvim')
@@ -274,6 +276,8 @@ else
   hi DiagnosticError ctermfg=203 guifg=#e27878
   hi DiagnosticSignError ctermbg=235 ctermfg=203 guibg=#1e2132 guifg=#e27878
   hi DiagnosticFloatingHint ctermbg=236 ctermfg=251 guibg=#3d425b guifg=#c6c8d1
+  hi NormalFloat guibg=#3d425b guifg=#c6c8d1
+  hi FloatBorder guibg=#3d425b guifg=#c6c8d1
   hi icebergALAccentRed ctermfg=203 guifg=#e27878
 
   if has('nvim')
