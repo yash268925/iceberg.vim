@@ -101,7 +101,7 @@ function! iceberg#palette#dark#create() abort
   let g.whitespace_fg = pgmnt#color#adjust_color(
         \ g.normal_bg, {
         \   'saturation': +0.08,
-        \   'lightness': +0.09,
+        \   'lightness': +0.13,
         \ })
   let g.wildmenu_bg = pgmnt#color#lighten(g.statusline_bg, 0.30)
   let g.wildmenu_fg = g.statusline_fg

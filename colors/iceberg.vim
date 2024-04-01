@@ -5,7 +5,7 @@
 "
 " File:       iceberg.vim
 " Maintainer: cocopon <cocopon@me.com>
-" Modified:   2023-05-26 15:34+0900
+" Modified:   2024-04-01 10:33+0900
 " License:    MIT
 
 
@@ -179,9 +179,9 @@ else
   hi Error ctermbg=234 ctermfg=203 guibg=#161821 guifg=#e27878
   hi ErrorMsg ctermbg=234 ctermfg=203 guibg=#161821 guifg=#e27878
   hi WarningMsg ctermbg=234 ctermfg=203 guibg=#161821 guifg=#e27878
-  hi EndOfBuffer ctermfg=236 guifg=#242940
-  hi NonText ctermfg=236 guifg=#242940
-  hi Whitespace ctermfg=236 guifg=#242940
+  hi EndOfBuffer ctermfg=236 guifg=#2b314d
+  hi NonText ctermfg=236 guifg=#2b314d
+  hi Whitespace ctermfg=236 guifg=#2b314d
   hi Folded ctermbg=235 ctermfg=245 guibg=#1e2132 guifg=#686f9a
   hi FoldColumn ctermbg=235 ctermfg=239 guibg=#1e2132 guifg=#444b71
   hi Function ctermfg=110 guifg=#84a0c6
